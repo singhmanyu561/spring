@@ -1,0 +1,37 @@
+.appBar {
+    display: flex;
+    padding: 0px;
+    /* border: 1px solid black; */
+    /* background-color: antiquewhite; */
+    width: 100%;
+
+}
+
+.webAppName {
+    margin-left: 250px;
+    position: relative;
+}
+
+.searchFiled>input {
+    padding-left: 30px;
+    position: relative;
+    margin-left: 300px;
+    margin-top: 20px;
+    width: 300px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    font-size: 20px;
+    position: relative;
+}
+
+.appBarIcons {
+    display: flex;
+    position: relative;
+    margin-left: 50px;
+}
+
+.appBarIcons>* {
+
+    margin: 20px;
+}

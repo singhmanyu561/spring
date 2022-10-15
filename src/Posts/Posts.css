@@ -1,0 +1,122 @@
+.postPaper {
+    width: 600px;
+    margin: 10px 10px 10px 250px;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.postHeader {
+    display: flex;
+    position: relative;
+
+}
+
+.postMediaDiv {
+    margin: 0px;
+    padding: 0px;
+}
+
+.postMedia {
+
+    width: 100%;
+    height: 80vh;
+}
+
+.postHeading {
+    display: flex;
+}
+
+.postAvatar {
+    padding: 10px;
+}
+
+
+
+.postTitle {
+    padding: 10px;
+    font-size: 18px;
+
+}
+
+.postHead1 {
+    display: flex;
+}
+
+.postHead2 {
+    font-size: 14px;
+}
+
+.postName {
+    margin-left: 10px;
+    /* font-family: 'Playfair Display', serif,bold; */
+    font-weight: 600;
+    font-style: italic;
+}
+
+.followStatus {
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.postMore {
+    width: 50px;
+    margin: 25px 0px 0px 220px;
+}
+
+.feedsControls {
+    display: flex;
+}
+
+.feedsControls * div {
+    margin: 10px;
+}
+
+.feedsControlsPart1 {
+    display: flex;
+}
+
+.savePost {
+    margin: 10px;
+    margin-left: 420px;
+}
+
+.likedBy {
+    display: flex;
+    padding: 10px;
+}
+
+.likedBy>span {
+
+    font-weight: 600;
+}
+
+.postCaption {
+    padding: 15px;
+}
+
+.postCaption>span {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.viewComments {
+    margin-top: 10px;
+    color: rgb(174, 181, 181);
+}
+
+.comments>span {
+    padding: 15px;
+    font-weight: 600;
+}
+
+.comments>div {
+    font-size: 14px;
+    padding: 15px;
+    color: rgb(174, 181, 181);
+}
+
+.addComments {
+    padding: 8px;
+    display: flex;
+}
