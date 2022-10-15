@@ -2,6 +2,9 @@ import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import {suggestObject} from  '../Objects';
 import './Suggestions.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const Suggestions = () => {
 
@@ -49,7 +52,7 @@ const Suggestions = () => {
                 {suggestObject.map((obj, key) => (
 
                 <div class="suggestionList">
-                    <div>
+                    {/* <div>
                         <Avatar sx={{ width: 40, height: 40, bgcolor: obj.color, marginTop: 2.5 }} src={obj.profilePic}> {obj.avatar} </Avatar>
                     </div>
                     <div class="suggestProfileDetails">
@@ -61,7 +64,30 @@ const Suggestions = () => {
                     </div>
 
                     <h4 class="labelLink2" onClick={followClicked}>Follow</h4>
-                </div>
+                </div> */}
+
+                <Container >
+                    <Row style={{display: 'flex'}}>
+                        <Col>
+                            <div>
+                                <Avatar sx={{ width: 40, height: 40, bgcolor: obj.color, marginTop: 2.5 }} src={obj.profilePic}> {obj.avatar} </Avatar>
+                            </div>
+                        </Col>
+                        <Col>
+                            <div class="suggestProfileDetails">
+                                <p>
+                                    <span class="suggestProfileName">{obj.suggestProfileName}</span>
+                                    <br />
+                                    <span class="suggestSubPoint">{obj.suggestInfo}</span>
+                                </p>
+                            </div>
+                        </Col>
+                        <Col>
+                            <h4 class="labelLink2" onClick={followClicked}>Follow</h4>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
 
             ))}
         </div>
