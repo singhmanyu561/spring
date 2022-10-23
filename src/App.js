@@ -1,8 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import Posts from './Posts/Posts';
-import AppBar from './AppBar/AppBar';
-import Stories from './Stories/Stories';
-import Suggestions from './Suggestions/Suggestions';
+import HomePage from './HomePage';
 
 
 const App = () =>{
@@ -18,18 +15,7 @@ const App = () =>{
   return(
     
         <div>
-          <AppBar />
-          <hr />
-          <div style={{ display: 'flex' }}>
-            <div>
-              <Stories />
-              <br />
-              <Posts />
-            </div>
-            <div>
-              <Suggestions />
-            </div>
-          </div>
+          <HomePage/>
         </div>
   );
 

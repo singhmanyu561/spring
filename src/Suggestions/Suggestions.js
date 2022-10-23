@@ -26,7 +26,7 @@ const Suggestions = () => {
       },[]);
 
     const click = () =>{
-        alert();
+        alert("see all clicked");
     }
 
     const switchClicked = () =>{
@@ -61,12 +61,12 @@ const Suggestions = () => {
                 <div class="seeAll" onClick={click}>See All</div>
             </div> */}
             <Container>
-                <Row>
-                    <Col lg={9}>
+                <Row >
+                    <Col sm={8}>
                         <div class="suggestionText">Suggestions For You</div>
                     </Col>
                     {/* <Col xs={2}></Col> */}
-                    <Col><div class="seeAll" onClick={click}>See All</div></Col>
+                    <Col sm={4}><h4 class="seeAll" onClick={click}>See All</h4></Col>
                 </Row>
             </Container>
 
