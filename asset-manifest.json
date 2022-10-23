@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/spring/static/css/main.6784bcfc.css",
+    "main.js": "/spring/static/js/main.04e58274.js",
+    "index.html": "/spring/index.html",
+    "main.6784bcfc.css.map": "/spring/static/css/main.6784bcfc.css.map",
+    "main.04e58274.js.map": "/spring/static/js/main.04e58274.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6784bcfc.css",
+    "static/js/main.04e58274.js"
+  ]
+}
