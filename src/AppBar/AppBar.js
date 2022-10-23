@@ -8,15 +8,9 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import './AppBar.css';
 import AddPost from '../AddPost/AddPost';
 import IconButton from '@material-ui/core/IconButton';
-
-
+import Modal from 'react-bootstrap/Modal';
 import Button from '@material-ui/core/Button';
-// import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const AppBar = () => {
     const [addPostDialogFlag,setAddPostDialogFlag] = useState(false);
@@ -25,14 +19,20 @@ const AppBar = () => {
 
     })
 
-    const handleClose = () => {
-        setMessage({ ...message, ['message']: '' })
-        setAddPostDialogFlag(false)
+    const [show, setShow] = useState(false);
 
-    };
+
+    // const handleClose = () => {
+    //     setMessage({ ...message, ['message']: '' })
+    //     setAddPostDialogFlag(false)
+
+    // };
     const addPost = () =>{
-            setAddPostDialogFlag(true)    
+            setShow(true)    
     }
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
     return(
         <div class="appBar">
@@ -46,14 +46,28 @@ const AppBar = () => {
                 <HomeIcon sx={{ width: 40, height: 40 }} />
                 <MarkChatUnreadOutlinedIcon sx={{ width: 40, height: 40 }} />
                 <IconButton onClick={addPost} >
-                    <AddCircleOutlineOutlinedIcon sx={{ width: 40, height: 40, cursor: 'pointer' }} onClick={addPost} />
+                    <AddCircleOutlineOutlinedIcon sx={{ width: 40, height: 40, cursor: 'pointer' }}  />
                 </IconButton>
                 
                 <ExploreOutlinedIcon sx={{ width: 40, height: 40 }} />
                 <FavoriteBorderOutlinedIcon sx={{ width: 40, height: 40 }} />
                 <Avatar sx={{ width: 40, height: 40, bgcolor: 'red' }}> A </Avatar>
             </div>
-            { addPostDialogFlag ? <AddPost openFlag={true}/> : [] }
+            {/* { addPostDialogFlag ? <AddPost openFlag={true}/> : [] } */}
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleClose}>
+                        Save Changes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     );
 }

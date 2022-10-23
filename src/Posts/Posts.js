@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState,useRef } from 'react';
 import Avatar from '@mui/material/Avatar';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FavoriteBorderTwoToneIcon from '@mui/icons-material/FavoriteBorderTwoTone';
@@ -9,10 +9,21 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 import InputBase from '@mui/material/InputBase';
 import Button from '@mui/material/Button';
 import './Posts.css';
-import {postObj} from '../Objects'
-
+import {postObj} from '../Objects';
+import IconButton from '@material-ui/core/IconButton';
+import EmojiPicker from 'emoji-picker-react';
+import Overlay from 'react-bootstrap/Overlay';
+import Tooltip from 'react-bootstrap/Tooltip';
+import { Editor } from "@tinymce/tinymce-react";
 
 const Posts = () => {
+    const [emojiFlag,setEmojiFlag] = useState(false);
+    const [commentText,setCommentText] = useState("");
+    const target = useRef(null);
+
+    const emoji = () =>{
+        setEmojiFlag(!emojiFlag);
+    }
 
     return(
         <div >
@@ -75,13 +86,17 @@ const Posts = () => {
                             </div>
                             <hr />
                             <div class="addComments">
-
+                            <IconButton ref={target} onClick={emoji} >
                                 <SentimentSatisfiedAltIcon sx={{ width: 40, height: 40 }} />
-                                <InputBase
-                                    sx={{ ml: 1, flex: 1 }}
-                                    placeholder="Add a comment..."
-                                />
-                                <Button variant="contained">Post</Button>
+                            </IconButton>
+                            <textarea 
+                                type="text"  
+                                class="commentTextArea"
+                                placeholder="Add a comment..."
+                                value={commentText} 
+                                onChange={(e) =>{setCommentText(e.target.value)}}
+                            />   
+                            <Button variant="contained" style={{height:50}}>Post</Button>
                             </div>
                         </div>
                     </div>
@@ -90,10 +105,22 @@ const Posts = () => {
                 )
                 )
             }
-            
+
+            <Overlay target={target.current} show={emojiFlag} placement="top">
+                {(props) => (
+                    <Tooltip id="overlay-example" {...props}>
+                        <EmojiPicker onEmojiClick={
+                            (emojiData) =>{
+                                console.log(emojiData.emoji)
+                                setCommentText(commentText+emojiData.emoji)
+                            }
+                        }/>
+                    </Tooltip>
+                )}
+            </Overlay>
+            {console.log(target.current)}
         </div>
     );
-
 }
 
 export default Posts;
