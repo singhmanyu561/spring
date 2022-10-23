@@ -1,6 +1,6 @@
 .postPaper {
-    width: 600px;
-    margin: 10px 10px 10px 250px;
+    width: 100%;
+    /* margin: 10px 10px 10px 10px; */
     border: 1px solid grey;
     border-radius: 10px;
 }

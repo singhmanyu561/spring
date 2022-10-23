@@ -29,13 +29,13 @@ const Posts = () => {
         <div >
             {
                 postObj.map((obj,key)=>(
-                    <div>
                     <div class="postPaper" key={key}>
                         <div class="postHeader">
                             <div class="postHeading">
                                 <div class="postAvatar">
                                         <Avatar sx={{ width: 50, height: 50, bgcolor: 'red' }} src={obj.profilePic}>
-                                         V </Avatar>
+                                         V 
+                                         </Avatar>
                                 </div>
                                 <div class="postTitle">
                                     <div class="postHead1">
@@ -45,9 +45,9 @@ const Posts = () => {
                                     <div class="postHead2">{obj.subHead}</div>
                                 </div>
                             </div>
-                            <div class="postMore">
+                            {/* <div class="postMore">
                                 <MoreHorizIcon />
-                            </div>
+                            </div> */}
                         </div>
                         <hr />
                         <div class="postMediaDiv">
@@ -61,9 +61,9 @@ const Posts = () => {
                                     <div><ChatBubbleOutlineTwoToneIcon /></div>
                                     <div><SendTwoToneIcon /></div>
                                 </div>
-                                <div class="savePost">
+                                {/* <div class="savePost">
                                     <BookmarkBorderIcon />
-                                </div>
+                                </div> */}
                             </div>
                             <div class="likedBy">
                                 <Avatar sx={{ width: 30, height: 30, bgcolor: 'green' }}> S </Avatar>
@@ -100,8 +100,6 @@ const Posts = () => {
                             </div>
                         </div>
                     </div>
-                    <br />
-                </div>
                 )
                 )
             }

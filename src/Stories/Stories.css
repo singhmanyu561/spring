@@ -1,8 +1,9 @@
 .stories {
     padding: 10px;
     background-color: azure;
-    width: 580px;
-    margin: 10px 10px 10px 250px;
+    position: relative;
+    width: 100%;
+    /* margin: 2px; */
     border: 1px solid grey;
     border-radius: 10px;
     display: flex;
@@ -11,7 +12,7 @@
 
 .profileStories {
     padding: 10px;
-    width: 700px;
+    width: 100%;
     font-size: 14px;
     font-weight: 500;
     justify-content: center;
