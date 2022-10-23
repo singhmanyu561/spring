@@ -37,14 +37,25 @@
     height: 50px;
 }
 
-.suggestionsAll>h4 {
+.suggestionText {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.seeAll{
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* .suggestionsAll>h4 {
     margin-left: 210px;
     cursor: pointer;
 }
 
 .suggestionsAll>h3 {
     color: gray;
-}
+} */
 
 .suggestionList {
     display: flex;
@@ -58,6 +69,7 @@
 }
 
 .suggestProfileDetails {
+    padding-top: 10px;
     margin-left: 30px;
     width: 150px;
     justify-self: flex-end;
@@ -76,8 +88,8 @@
 }
 
 .labelLink2 {
-    padding: 10px;
-    margin-left: 160px;
+    padding-top: 20px;
+    /* margin-left: 160px; */
     font-size: 18px;
     font-weight: 700;
     color: rgb(51, 135, 252);

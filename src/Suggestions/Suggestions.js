@@ -1,10 +1,12 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import Avatar from '@mui/material/Avatar';
 import {suggestObject} from  '../Objects';
 import './Suggestions.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import axios from 'axios';
+
 
 const Suggestions = () => {
 
@@ -12,6 +14,16 @@ const Suggestions = () => {
     const name = "Abhimanyu Singh";
     const profilePic = "./assets/pic.jpg";
     
+    const [suggestedUserdata,setSuggestedUserData] = useState([]);
+
+    const retrieve = async () => {
+        const {data} = await axios.get("https://randomuser.me/api/?results=5");
+        setSuggestedUserData(data.results);
+    }
+
+    useEffect(() => {
+        retrieve();
+      },[]);
 
     const click = () =>{
         alert();
@@ -44,12 +56,21 @@ const Suggestions = () => {
                
             </div>
 
-            <div class="suggestionsAll">
-                <h3>Suggestions For You</h3>
-                <h4 onClick={click}>See All</h4>
-            </div>
+            {/* <div class="suggestionsAll">
+                <div class="suggestionText">Suggestions For You</div>
+                <div class="seeAll" onClick={click}>See All</div>
+            </div> */}
+            <Container>
+                <Row>
+                    <Col lg={9}>
+                        <div class="suggestionText">Suggestions For You</div>
+                    </Col>
+                    {/* <Col xs={2}></Col> */}
+                    <Col><div class="seeAll" onClick={click}>See All</div></Col>
+                </Row>
+            </Container>
 
-                {suggestObject.map((obj, key) => (
+                {suggestedUserdata.map((obj, key) => (
 
                 <div class="suggestionList">
                     {/* <div>
@@ -68,17 +89,19 @@ const Suggestions = () => {
 
                 <Container >
                     <Row style={{display: 'flex'}}>
-                        <Col>
+                        <Col xs={2}>
                             <div>
-                                <Avatar sx={{ width: 40, height: 40, bgcolor: obj.color, marginTop: 2.5 }} src={obj.profilePic}> {obj.avatar} </Avatar>
+                                <Avatar sx={{ width: 40, height: 40, bgcolor: obj.color, marginTop: 2.5 }} src={obj.picture.thumbnail}>  
+                                    {obj.login.username[0].toUpperCase()}  
+                                </Avatar>
                             </div>
                         </Col>
                         <Col>
                             <div class="suggestProfileDetails">
                                 <p>
-                                    <span class="suggestProfileName">{obj.suggestProfileName}</span>
+                                    <span class="suggestProfileName">{obj.login.username}</span>
                                     <br />
-                                    <span class="suggestSubPoint">{obj.suggestInfo}</span>
+                                    <span class="suggestSubPoint">New to Instagram</span>
                                 </p>
                             </div>
                         </Col>
