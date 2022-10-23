@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/spring/static/css/main.6784bcfc.css",
-    "main.js": "/spring/static/js/main.04e58274.js",
-    "index.html": "/spring/index.html",
-    "main.6784bcfc.css.map": "/spring/static/css/main.6784bcfc.css.map",
-    "main.04e58274.js.map": "/spring/static/js/main.04e58274.js.map"
+    "main.css": "/static/css/main.d3252b78.css",
+    "main.js": "/static/js/main.e21b69ef.js",
+    "index.html": "/index.html",
+    "main.d3252b78.css.map": "/static/css/main.d3252b78.css.map",
+    "main.e21b69ef.js.map": "/static/js/main.e21b69ef.js.map"
   },
   "entrypoints": [
-    "static/css/main.6784bcfc.css",
-    "static/js/main.04e58274.js"
+    "static/css/main.d3252b78.css",
+    "static/js/main.e21b69ef.js"
   ]
 }
