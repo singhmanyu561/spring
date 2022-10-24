@@ -9,27 +9,46 @@
 }
 
 .profileDetails {
-    margin-left: 30px;
+    position: relative;
+    float:left;
+    width: 100%;
+    padding: 10px;
+    /* margin-left: 30px; */
+}
+
+.profileAvtar{
+    padding-top: 5px;
+    margin: auto;
+    width: 100%;
+    position: relative;
+    /* float: right; */
+    
 }
 
 .labelLink1 {
-    padding: 10px;
-    margin-left: 120px;
-    font-size: 18px;
+    padding: 20px;
+    position: relative;
+    float: right;
+    /* align-items: right; */
     font-weight: 700;
     color: rgb(51, 135, 252);
     cursor: pointer;
 }
 
 #suggestProfileName {
-    font-size: 18px;
+    font-size: auto;
     font-weight: 500;
+    position: relative;
+    width: 80%;
 }
 
 #suggestName {
-    font-size: 18px;
+    /* font-size: 18px; */
+    font-size: auto;
     font-weight: 500;
     color: gray;
+    position: relative;
+    width: 80%;
 }
 
 .suggestionsAll {
@@ -44,16 +63,17 @@
     color: rgb(235, 98, 159);
 }
 
-.seeAll{
-    font-size: 18px;
-    font-weight: 600;
-    margin-left: 10px;
-    color: grey;
-    cursor: pointer;
-    margin-top: 10px;
-    padding-left: 50px;
-    /* background-color: grey; */
+
+
+.seeAll {
+    /* height:30;
+    color:"white"; */
+    background: "blueviolet";
+    border: "1px solid white";
+    border-radius: 15px;
+    padding-top: 10px;
 }
+
 
 /* .suggestionsAll>h4 {
     margin-left: 210px;
@@ -107,7 +127,7 @@
 
 .footer {
     display: flex;
-    margin-left: 30px;
+    /* margin-left: 30px; */
 }
 
 .footer a {
@@ -118,11 +138,11 @@
 
 
 .language {
-    margin-left: 40px;
+    margin-left: 10px;
     color: rgb(183, 181, 181);
 }
 
 .copyright {
-    margin-left: 40px;
+    margin-left: 10px;
     color: rgb(183, 181, 181);
 }

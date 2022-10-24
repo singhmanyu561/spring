@@ -5,7 +5,7 @@ export const postObj = [
         subHead: "India",
         image: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_800,q_50/lsci/db/PICTURES/CMS/342800/342825.jpg",
         alt: "landscape",
-        likedBy: "mdsaddam1547_",
+        likedBy: "abhimanyu8486",
         caption: `Studies proved that dogs take interest in your gossips.
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Vestibulum sed tellus vulputate, dapibus nunc ac, bibendum lorem.

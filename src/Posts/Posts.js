@@ -29,6 +29,7 @@ const Posts = () => {
         <div >
             {
                 postObj.map((obj,key)=>(
+                    <div>
                     <div class="postPaper" key={key}>
                         <div class="postHeader">
                             <div class="postHeading">
@@ -99,6 +100,8 @@ const Posts = () => {
                             <Button variant="contained" style={{height:50}}>Post</Button>
                             </div>
                         </div>
+                    </div>
+                    <br/>
                     </div>
                 )
                 )

@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Avatar from '@mui/material/Avatar';
 import HomeIcon from '@mui/icons-material/Home';
 import MarkChatUnreadOutlinedIcon from '@mui/icons-material/MarkChatUnreadOutlined';
@@ -14,39 +14,35 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+// import Button from '@mui/material/Button';
 
-const AppBar = () => {
-    const [addPostDialogFlag,setAddPostDialogFlag] = useState(false);
-    const [message, setMessage] = useState({
-        'message': ''
-
-    })
-
+const AppBar = ({widthFlag,handleSuggestionFlag}) => {
+    
     const [show, setShow] = useState(false);
+    const [suggestionFlagLocal,setSuggestionFlagLocal] = useState(false);
 
-
-    // const handleClose = () => {
-    //     setMessage({ ...message, ['message']: '' })
-    //     setAddPostDialogFlag(false)
-
-    // };
+    
     const addPost = () =>{
             setShow(true)    
     }
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+    const handleSuggestionFlagLocal = () => {
+        setSuggestionFlagLocal(!suggestionFlagLocal)
+    }
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return(
         <div class="appBar">
             <Container>
                 <Row >
-                    <Col lg={3} >
+                    <Col lg={4} >
                         <div class="webAppName">
-                            <h1>Spring</h1>
+                            <h1>Blooming-O</h1>
                         </div>
                     </Col>
-                    <Col lg={4} >
+                    <Col lg={3} >
                         <div class="searchFiled">
                             <input type="text" placeholder="Search" />
                         </div>
@@ -74,26 +70,34 @@ const AppBar = () => {
                         </div>
                     </Col>
                 </Row>
-            </Container>
-            {(window.innerWidth <992) && <h4>View all Suggestions</h4>}
-
-            {/* <div class="webAppName">
-                <h1>Spring</h1>
-            </div>
-            <div class="searchFiled">
-                <input type="text" placeholder="Search" />
-            </div>
-            <div class="appBarIcons">
-                <HomeIcon sx={{ width: 40, height: 40 }} />
-                <MarkChatUnreadOutlinedIcon sx={{ width: 40, height: 40 }} />
-                <IconButton onClick={addPost} >
-                    <AddCircleOutlineOutlinedIcon sx={{ width: 40, height: 40, cursor: 'pointer' }}  />
-                </IconButton>
+                {
+                    widthFlag ? 
+                    <Row>
+                        <Col xs={12}>
+                            {(window.innerWidth < 992 && suggestionFlagLocal )?
+                            <div class="suggestionButton">
+                                <Button  onClick={()=>{handleSuggestionFlag();handleSuggestionFlagLocal()}} style={{height:30, color:'white',background:'blueviolet'}}>
+                                    <span>
+                                        View All Post
+                                    </span> 
+                                   
+                                </Button>
+                            </div>
+                            :
+                            <div class="suggestionButton1">
+                            <Button  onClick={()=>{handleSuggestionFlag();handleSuggestionFlagLocal()}} style={{height:30, color:'white',background:'blueviolet'}}>
+                                <span>
+                                    View Suggestions List
+                                </span> 
+                            </Button>
+                            </div>
+                            }
+                        </Col>
+                    </Row>
+                    :[]
+                }
                 
-                <ExploreOutlinedIcon sx={{ width: 40, height: 40 }} />
-                <FavoriteBorderOutlinedIcon sx={{ width: 40, height: 40 }} />
-                <Avatar sx={{ width: 40, height: 40, bgcolor: 'red' }}> A </Avatar>
-            </div> */}
+            </Container>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
@@ -108,6 +112,7 @@ const AppBar = () => {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            {/* {console.log(handleSuggestionFlag)} */}
         </div>
     );
 }
