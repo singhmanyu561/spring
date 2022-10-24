@@ -8,7 +8,7 @@
 }
 
 .webAppName {
-    margin-left: 40%;
+    margin-left: 35%;
     margin-top: 10px;
     position: relative;
     color: rgb(245, 18, 173);
@@ -19,7 +19,8 @@
 }
 
 .webAppName > h1{
-    width: 80%;
+    position: relative;
+    width: 100% ;
 }
 
 .searchFiled>input {
@@ -48,3 +49,16 @@
     width: 15%;
     /* margin-left: 5%; */
 }
+
+.suggestionButton1{
+    width: 100%;
+    position: relative;
+    margin-left: 31.5%;
+}
+
+.suggestionButton{
+    width: 100%;
+    position: relative;
+    margin-left: 38%;
+}
+
