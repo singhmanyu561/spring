@@ -39,7 +39,7 @@ const AppBar = ({widthFlag,handleSuggestionFlag}) => {
                 <Row >
                     <Col lg={4} >
                         <div class="webAppName">
-                            <h1>Blooming-O</h1>
+                            Blooming-O
                         </div>
                     </Col>
                     <Col lg={3} >
@@ -76,21 +76,25 @@ const AppBar = ({widthFlag,handleSuggestionFlag}) => {
                         <Col xs={12}>
                             {(window.innerWidth < 992 && suggestionFlagLocal )?
                             <div class="suggestionButton">
-                                <Button  onClick={()=>{handleSuggestionFlag();handleSuggestionFlagLocal()}} style={{height:30, color:'white',background:'blueviolet'}}>
+                                <Button 
+                                     
+                                    onClick={()=>{handleSuggestionFlag();handleSuggestionFlagLocal()}} 
+                                    style={{height:30, color:'white',background:'blueviolet'}}
+                                >
                                     <span>
                                         View All Post
                                     </span> 
                                    
                                 </Button>
-                            </div>
+                             </div>
                             :
                             <div class="suggestionButton1">
-                            <Button  onClick={()=>{handleSuggestionFlag();handleSuggestionFlagLocal()}} style={{height:30, color:'white',background:'blueviolet'}}>
+                            <Button   onClick={()=>{handleSuggestionFlag();handleSuggestionFlagLocal()}} style={{height:30, color:'white',background:'blueviolet'}}>
                                 <span>
                                     View Suggestions List
                                 </span> 
                             </Button>
-                            </div>
+                             </div>
                             }
                         </Col>
                     </Row>
