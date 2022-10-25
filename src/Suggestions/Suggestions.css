@@ -138,11 +138,13 @@
 
 
 .language {
+    width: fit-content;
     margin-left: 10px;
     color: rgb(183, 181, 181);
 }
 
 .copyright {
+    width: fit-content;
     margin-left: 10px;
     color: rgb(183, 181, 181);
 }

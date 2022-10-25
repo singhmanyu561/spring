@@ -8,11 +8,12 @@
 }
 
 .webAppName {
-    margin-left: 35%;
+    font-size: 36px;
+    margin-left: 30%;
     margin-top: 10px;
     position: relative;
     color: rgb(245, 18, 173);
-    width: 100%;
+    width: 55%;
     font-family: 'DynaPuff', cursive;
     font-family: 'Pacifico', cursive;
     font-family: 'Playfair Display', serif;
@@ -51,14 +52,14 @@
 }
 
 .suggestionButton1{
-    width: 100%;
+    width: fit-content;
     position: relative;
-    margin-left: 31.5%;
+    margin-left: 30%;
 }
 
 .suggestionButton{
-    width: 100%;
+    width: fit-content;
     position: relative;
-    margin-left: 38%;
+    margin-left: 36%;
 }
 
